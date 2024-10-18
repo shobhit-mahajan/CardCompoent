@@ -1,4 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+// next.config.mjs
+export default {
+               trailingSlash: true,
+               images: {
+                 unoptimized: true, // Disable Next.js image optimization if you are using images
+               },
+             };
+             

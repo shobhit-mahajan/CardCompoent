@@ -1,101 +1,26 @@
-import Image from "next/image";
+import { color } from "framer-motion";
+import StatsCard from "./Components/StatsCard";
+
+const svg1 = (
+<svg viewBox="-15 0 40 40"  fill="#636363"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11 1v19h4V1zm3 18h-2V2h2zm-9-9v10h4V10zm3 9H6v-8h2zm9-14v15h4V5zm3 14h-2V6h2zM2 22h21v1H1V1h1z"></path><path fill="none" d="M0 0h24v24H0z"></path></g></svg>
+);
+
+const svg2 = (
+ <svg fill="#636363" viewBox="-638.4 0 1832 1832" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M266.815 537.708c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM266.815 679.347c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM266.815 820.988c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM228.18 81.918v153.6c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-153.6c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48zm528.09 0v153.6c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-153.6c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48z"></path><path d="M890.877 137.517c33.931 0 61.44 27.509 61.44 61.44v703.375c0 33.931-27.509 61.44-61.44 61.44h-757.76c-33.931 0-61.44-27.509-61.44-61.44V198.957c0-33.931 27.509-61.44 61.44-61.44h757.76zm-757.76 40.96c-11.309 0-20.48 9.171-20.48 20.48v703.375c0 11.309 9.171 20.48 20.48 20.48h757.76c11.309 0 20.48-9.171 20.48-20.48V198.957c0-11.309-9.171-20.48-20.48-20.48h-757.76z"></path><path d="M575.03 338.288c0-33.93-27.51-61.44-61.44-61.44s-61.44 27.51-61.44 61.44c0 33.93 27.51 61.44 61.44 61.44s61.44-27.51 61.44-61.44zm40.96 0c0 56.551-45.849 102.4-102.4 102.4s-102.4-45.849-102.4-102.4c0-56.551 45.849-102.4 102.4-102.4s102.4 45.849 102.4 102.4z"></path></g></svg>
+);
+
+const svg3 = (
+   <svg  version="1.0" xmlns="http://www.w3.org/2000/svg"  width="400.000000pt" height="350.000000pt" viewBox="0 0 429.000000 580.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,448.000000) scale(0.050000,-0.050000)" fill="#7d7d7d" stroke="none"> <path d="M7090 7833 c-351 -116 -477 -263 -832 -975 -343 -688 -278 -638 -822 -638 -430 0 -348 -73 -699 625 -264 526 -290 569 -416 695 -402 403 -1011 409 -1432 16 -148 -138 -173 -184 -1015 -1906 -247 -506 -654 -1334 -903 -1840 -322 -654 -465 -965 -494 -1077 -232 -896 694 -1667 1455 -1211 217 131 301 250 617 878 158 314 307 589 331 610 61 55 830 75 908 23 30 -20 152 -239 341 -617 446 -889 587 -1018 1101 -1019 569 -1 723 146 1209 1156 477 993 577 1199 1155 2367 302 611 578 1178 613 1260 l63 150 0 400 0 400 -67 138 c-208 424 -733 691 -1113 565z m534 -257 c328 -151 476 -411 476 -835 -1 -350 -15 -391 -449 -1259 -215 -430 -391 -785 -391 -789 0 -4 -184 -383 -410 -842 -225 -459 -410 -837 -410 -840 0 -8 -379 -795 -466 -968 -151 -300 -481 -451 -878 -401 -357 45 -403 97 -836 954 l-350 694 -350 6 c-516 9 -707 -8 -781 -70 -40 -33 -159 -249 -370 -668 -328 -651 -376 -724 -554 -827 -646 -374 -1399 256 -1178 984 23 76 299 658 613 1294 313 636 570 1158 570 1161 0 22 1034 2097 1074 2155 186 271 718 383 1047 221 230 -114 273 -174 630 -891 l320 -645 440 -5 c474 -6 620 11 699 82 27 23 185 316 353 650 323 645 384 734 564 827 183 94 447 99 637 12z"/> <path d="M7225 6709 c-36 -39 -65 -78 -65 -88 0 -66 -587 -439 -850 -541 -216 -84 -185 -37 -583 -867 -424 -881 -457 -930 -648 -949 -130 -12 -223 24 -311 121 -95 105 -1159 2242 -1151 2312 3 31 -4 44 -21 38 -14 -4 -27 -30 -29 -57 -1 -26 -187 -421 -412 -878 -772 -1564 -1286 -2610 -1395 -2843 -61 -128 -116 -229 -124 -224 -8 4 -23 -9 -35 -31 -11 -21 -36 -54 -54 -72 -24 -24 -27 -38 -10 -55 25 -25 163 91 163 138 0 63 469 361 788 500 111 49 222 108 246 133 37 37 746 1427 746 1462 0 50 114 180 186 213 154 70 285 45 400 -76 68 -72 1156 -2233 1162 -2309 5 -64 21 -85 51 -67 24 15 29 71 6 71 -9 0 124 281 295 625 398 800 1263 2572 1452 2976 89 190 174 341 217 387 64 67 95 152 56 152 -8 0 -44 -32 -80 -71z m-3402 -929 c268 -538 287 -599 171 -537 -268 144 -540 -45 -789 -547 -203 -410 -389 -782 -487 -977 -42 -83 -102 -174 -132 -203 -47 -45 -363 -196 -410 -196 -23 0 -4 40 330 720 1008 2053 1054 2143 1089 2136 22 -4 103 -145 228 -396z m2837 183 c0 -31 -184 -426 -422 -905 -131 -264 -238 -483 -238 -486 0 -26 -701 -1430 -720 -1442 -39 -24 -67 20 -309 492 -261 510 -263 515 -151 458 350 -179 564 -16 907 689 437 900 500 1020 553 1046 258 127 380 175 380 148z"/> </g> </svg> 
+);
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StatsCard value={95} label="Percent customer satisfaction" bgColor="bg-[#82ff1f]" svg={svg1} withCircle/>
+        <StatsCard value={10} label="Years of experience" bgColor="bg-gray-800 text-white" svg={svg2} withStar/>
+        <StatsCard value={24} label="Projects completed" bgColor="bg-[#f4f4f4d9] text-slate-950" svg={svg3} withAsterisk/>
+      </div>
     </div>
   );
 }
